@@ -26,7 +26,7 @@ html {
   --header1: calc(2rem + 1vw);
   --header2: calc(4rem + 1vw);
   --header3: calc(3rem + 1vw);
-  --header4: calc(2.4rem + 1vw);
+  --header4: calc(1rem + 1vw);
   --text: calc(1rem + 1vw);
   --big: calc(2.4rem + 1vw);
   --gcolor1: #554c73;
@@ -59,7 +59,7 @@ h3 {
 
 h4,
 h5 {
-  font-size: var(--header5);
+  font-size: var(--header4);
 }
 
 ul {
@@ -104,6 +104,7 @@ button:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
 .container {
@@ -216,18 +217,21 @@ button:hover {
   padding: 2rem;
   margin-bottom: 3rem;
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 20rem 20rem;
-  grid-row-gap: 2rem;
+  grid-template-columns: repeat(4, 1fr);
   justify-items: center;
   align-items: center;
 }
 
 .icon {
-  width: 15rem;
   border: 0.3rem solid var(--text-color);
-  border-radius: 0.3rem;
+  border-radius: 50%;
   padding: 3rem;
+  margin-bottom: 2rem;
+}
+
+.icon img {
+  height: 10rem;
+  width: 10rem;
 }
 
 .icon:hover {
@@ -267,8 +271,8 @@ button:hover {
 }
 
 .member {
-  height: 15rem;
-  width: 15rem;
+  height: 12rem;
+  width: 12rem;
   padding: 1rem;
   margin: 2rem;
   background: var(--gcolor1);
@@ -346,7 +350,7 @@ footer .container {
   border: none;
   width: 100%;
   border-radius: 1rem;
-  margin: 5rem 0rem;
+  margin: 5rem 2rem;
 }
 
 .footer-text button:hover {
@@ -410,5 +414,16 @@ form button:hover {
   .how-we-started p,
   #goals p {
     padding: 1rem;
+  }
+
+  #events .icons {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-row-gap: 3rem;
+  }
+
+  .icon img {
+    height: 5rem;
+    width: 5rem;
   }
 }
