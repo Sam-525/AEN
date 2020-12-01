@@ -1,0 +1,68 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Red Rose", cursive;
+  font-weight: 400;
+  color: #e4e3e3;
+  animation: openning 1s ease-in-out;
+}
+
+a,
+button,
+label,
+li,
+p {
+  font-size: $text;
+  color: $gray-text;
+}
+
+h1 {
+  font-size: $header1;
+}
+
+h2 {
+  font-size: $header2;
+}
+
+h3 {
+  font-size: $header3;
+}
+
+h4 {
+  font-size: $header4;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  font-family: inherit;
+  text-decoration: none;
+  text-align: center;
+  color: $gray-text;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+// ANIMATIONS
+@keyframes openning {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

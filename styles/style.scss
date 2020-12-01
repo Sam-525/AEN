@@ -1,0 +1,51 @@
+$header1:2.5rem;
+$header2:3rem;
+$header3:2.5rem;
+$header4:2rem;
+$text: 1.6rem;
+$hero-length: 121rem;
+$background-color: #34626c;
+$gray-text: #839b97;
+
+@mixin flex($justify, $align, $direction) {
+	display: flex;
+	justify-content: $justify;
+	align-items: $align;
+	flex-direction: $direction;
+}
+
+@import "global";
+@import "landing";
+@import "started";
+@import "events";
+@import "goals";
+@import "info";
+@import "contact";
+@import "footer";
+
+// MEDIA QUERIES
+@media screen and (max-width:894px) {
+	html {
+		font-size: 53%;
+	}
+
+	nav {
+		width: 90%;
+	}
+
+	ul {
+		margin-top: 2rem;
+	}
+
+	.hero {
+		h2 {
+			text-align: center;
+		}
+
+		p {
+			padding: 2rem 4rem;
+		}
+
+	}
+
+}

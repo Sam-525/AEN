@@ -1,0 +1,37 @@
+footer {
+	min-height: 10vh;
+	background: #204051;
+
+	.container {
+		width: 90%;
+		height: 10vh;
+		margin: 0 auto;
+		@include flex(space-around, center, row);
+		flex-wrap: wrap;
+
+		p {
+			flex: 1 1 40rem;
+		}
+	}
+}
+
+.social-links {
+	@include flex(space-around, center, row);
+	flex: 1 1 40rem;
+
+	img {
+		width: 4rem;
+		transition: 0.2s all ease;
+	}
+
+	img:hover {
+		transform: scale(0.9);
+	}
+}
+// MEDIA-QUERIES
+@media screen and (max-width: 739px) {
+	.container p {
+		text-align: center;
+		margin: 1rem 0;
+	}
+}

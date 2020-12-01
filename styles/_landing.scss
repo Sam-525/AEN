@@ -1,0 +1,246 @@
+.main-head {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.5)), url("../imgs/background.jpg") center no-repeat;
+  background-size: cover;
+}
+// NAV-STYLES
+nav {
+  width: 70%;
+  margin: auto;
+  min-height: 20vh;
+  @include flex(center, space-around, column);
+  text-align: center;
+
+  ul {
+    @include flex(space-around, center, row);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+
+    a {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+#logo {
+  width: 10rem;
+}
+// DROPDOWN
+.dropdown {
+  position: relative;
+
+  a {
+    img {
+      margin-left: 1rem;
+      width: 1.5rem;
+    }
+  }
+}
+
+.dropdown-content {
+  @include flex(space-evenly, center, column);
+  margin-top: 1rem;
+  position: absolute;
+  left: 0;
+  background: #204051;
+  width: 150%;
+  height: 15rem;
+  border-radius: 0.2rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s ease;
+  transform: translateY(-10px);
+
+  li {
+    @include flex(flex-start, center, row);
+    padding-left: 2rem;
+    width: 100%;
+    height: 100%;
+  }
+
+  li:hover {
+    background: rgba(153, 153, 153, 0.83);
+    color: white;
+    cursor: pointer;
+
+    a {
+      color: #e4e3e3;
+    }
+  }
+}
+
+.dropdown:hover .dropdown-content {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateY(0);
+}
+// NAV-ANIMATIONS
+.main-link {
+  position: relative;
+  padding: 0 0.5rem;
+  z-index: 1;
+}
+
+.main-link > a:hover {
+  color: #e4e3e3;
+}
+
+.main-link::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: auto;
+  height: 50%;
+  background: #204051;
+  visibility: none;
+  opacity: 0;
+  z-index: -1;
+  transition: 0.3s all ease-in-out;
+}
+
+.main-link:hover::after {
+  visibility: visible;
+  border-radius: 0.2rem;
+  opacity: 1;
+  height: 200%;
+}
+
+.hero {
+  min-height: 80vh;
+  width: 90%;
+  margin: auto;
+  @include flex(center, center, column);
+
+  h2 {
+    font-family: "Bowlby One SC", cursive;
+    font-size: 5rem;
+    transform: translateX(-150%);
+    animation: slideInLeft 1s ease-in-out 0.5s forwards;
+  }
+
+  h3 {
+    font-size: 3rem;
+    opacity: 0;
+    animation: popUp 1s ease 1.5s forwards;
+  }
+
+  p {
+    padding: 2rem 15rem;
+    text-align: center;
+  }
+}
+// HERO-TEXT ANIMATION
+.sparkle {
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.u-hover--sparkle {
+  box-sizing: border-box;
+  position: relative;
+  padding: 1rem;
+
+  &::after,
+  &::before {
+    content: "";
+    box-sizing: border-box;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transform-origin: center;
+  }
+
+  &::before {
+    border-top: 0.2rem solid #fff;
+    border-bottom: 0.2rem solid #fff;
+    transform: scale3d(0, 1, 1);
+  }
+
+  &::after {
+    border-left: 0.2rem solid #fff;
+    border-right: 0.2rem solid #fff;
+    transform: scale3d(1, 0, 1);
+  }
+
+  &:hover::after,
+  &:hover::before {
+    transform: scale3d(1, 1, 1);
+    transition: transform 900ms;
+  }
+}
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-150%) scale(3);
+    opacity: 0.5;
+  }
+
+  to {
+    transform: translateX(0%) scale(1);
+    opacity: 1;
+  }
+}
+@keyframes popUp {
+  from {
+    opacity: 0;
+    transform: scale(0);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+// BUTTONS
+.buttons {
+  font-size: 0;
+
+  button {
+    margin-top: 3rem;
+    white-space: none;
+    padding: 1rem 2rem;
+    border: none;
+    font-family: inherit;
+    font-size: 1.3rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+  }
+
+  button:hover {
+    transform: scale(1.1);
+  }
+}
+
+.btn-1 {
+  color: #000;
+}
+
+.btn-2 {
+  background: #34626c;
+  color: #fff;
+}
+// MEDIA-QUERIES
+@media screen and (max-width:447px) {
+  .nav-links li a {
+    font-size: 1.5rem;
+  }
+
+  .dropdown a img {
+    width: 0.8rem;
+    padding-bottom: 0.2rem;
+    margin-left: 0.1rem;
+  }
+}
+@media screen and (max-width:415px) {
+  .nav-links li a {
+    font-size: 1.2rem;
+  }
+}
